@@ -60,8 +60,24 @@ RSpec.describe StringCalculator do
         end
 
         context 'when numbers separated by different delimiters' do
-            xit 'returns the sum of those numbers' do
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("//;\n1;2")).to eq(3)
+            end
 
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("//;\n1;2;3;4;5;6")).to eq(21)
+            end
+
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("//*\n1*2*3")).to eq(6)
+            end
+
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("//$$\n1$$2$$3")).to eq(6)
+            end
+
+            it 'returns the sum of those numbers' do
+                expect { calculator.add("//$$\n1$$$$2$$3") }.to raise_error(RuntimeError, 'Invalid input')
             end
         end
 
