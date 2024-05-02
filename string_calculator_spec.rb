@@ -38,10 +38,23 @@ RSpec.describe StringCalculator do
             it 'returns the sum of those numbers' do
                 expect(calculator.add('100,200,300')).to eq(600)
             end
+
+            it 'returns the sum of those numbers with spaces' do
+                expect(calculator.add('    100   ,   200    ,     300    ')).to eq(600)
+            end
         end
 
         context 'when numbers separated by newlines' do
-            xit 'returns the sum of those numbers' do
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("1\n2")).to eq(3)
+            end
+
+            it 'returns the sum of those numbers' do
+                expect(calculator.add("1\n2,3, 4\n5\n7")).to eq(22)
+            end
+
+            it 'returns the invalid' do
+                expect { calculator.add("1,\n") }.to raise_error(RuntimeError, 'Invalid input')
 
             end
         end
