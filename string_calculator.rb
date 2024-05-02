@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Calculator to add numbers from a string.
 class StringCalculator
   def add(numbers)
@@ -7,16 +9,16 @@ class StringCalculator
 
     raise 'Invalid input' if numbers.include?('')
 
+    negatives = numbers.select { |n| n.to_i.negative? }
+    raise "negative numbers not allowed #{negatives.join(',')}" if negatives.any?
+
     numbers.map(&:to_i).reduce(:+)
   end
+
   def get_delimiter(numbers)
     delimiter = /[\n,]/
-    if numbers.start_with?("//")
-      delimiter = numbers[2..numbers.index("\n") - 1]
-    end
+    delimiter = numbers[2..numbers.index("\n") - 1] if numbers.start_with?('//')
 
     delimiter
   end
 end
-
-
