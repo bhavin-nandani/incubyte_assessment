@@ -2,7 +2,7 @@
 
 ## Things To Keep In Mind
 - Host your solution on a public GitHub/GitLab repository.
-- Follow best practices for TDD. Watch this [video](https://www.youtube.com/watch?v=QCif_-rZazY) to understand TDD better.
+- Follow best practices for TDD. Watch this [video](https://www.youtube.com/watch?v=qkblc5WRn-U) to understand TDD better.
 - Commit your changes frequently, ideally after every change to show how your code evolves with every step of TDD.
 - We encourage you to use the programming language and tools you feel most comfortable with.
 - Do not rush, take your time, we want to see your best work!
