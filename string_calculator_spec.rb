@@ -31,8 +31,12 @@ RSpec.describe StringCalculator do
         end
 
         context 'when multiple numbers' do
-            xit 'returns the sum of those numbers' do
+            it 'returns the sum of those numbers' do
+                expect(calculator.add('1,2,3')).to eq(6)
+            end
 
+            it 'returns the sum of those numbers' do
+                expect(calculator.add('100,200,300')).to eq(600)
             end
         end
 
